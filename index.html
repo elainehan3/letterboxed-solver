@@ -43,6 +43,11 @@
       </div>
     </div>
     <script type="mpy" src="./main.py" config="./pyscript.toml"></script>
+    <py-script>
+      from pyscript import fetch
+      response = await pyscript.fetch("https://examples.pyscriptapps.com/api-proxy-and-secrets-tutorial/api/proxies/list-secrets", method="GET").json()
+      print(response)
+  </py-script>
     <div class="section" id='formSection'>
       <div>
         <button type='button' id ='autoPopulate' style='width:auto'>Autofill with today's puzzle</button>
