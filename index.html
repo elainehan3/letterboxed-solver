@@ -32,7 +32,7 @@
   </script>
 </head>
 <body>
-  <script type="mpy" src="./main.py" config="./pyscript.toml"></script>
+  <script type="mpy" src="./main.py" config="./pyscript.toml" async terminal></script>
     <py-script>
       from pyscript import fetch
       response = await pyscript.fetch("https://examples.pyscriptapps.com/api-proxy-and-secrets-tutorial/api/proxies/list-secrets", method="GET").json()
