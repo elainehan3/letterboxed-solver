@@ -1,6 +1,6 @@
 import arrr
 from pyscript import document
-from pyscript import fetch
+from pyscript.http import pyfetch
 
 
 async def translate_english(event):
@@ -8,7 +8,7 @@ async def translate_english(event):
     english = input_text.value
     output_div = document.querySelector("#output")
     try:
-        response = await fetch(
+        response = await pyfetch(
         "https://www.nytimes.com/puzzles/letter-boxed",
         method="GET").json()
     except Exception as e:
