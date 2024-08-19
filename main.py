@@ -1,5 +1,6 @@
 import arrr
-from pyscript import document, fetch
+from pyscript import document
+from pyscript import fetch
 
 
 async def translate_english(event):
@@ -10,7 +11,7 @@ async def translate_english(event):
         response = await fetch(
         "https://www.nytimes.com/puzzles/letter-boxed",
         method="GET").json()
-    except:
-        response = "error"
+    except Exception as e:
+        response = e
     print(response)
     output_div.innerText = arrr.translate(english) + response
