@@ -1,2 +1,3 @@
-name = "Tic Tac Toe"
-description = "A Tic-Tac-Toe game written in PyScript that allows to people take turns."
+name = "API Proxy and Secrets Tutorial"
+description = "Introduction to using Proxies and Secrets."
+tags = ["features", "tutorial"]
