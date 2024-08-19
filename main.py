@@ -9,5 +9,6 @@ async def translate_english(event):
     response = await fetch(
     "https://examples.pyscriptapps.com/api-proxy-tutorial/api/proxies/status-check",
     method="GET"
-).json()
+).text()
+    print(response)
     output_div.innerText = arrr.translate(english) + response
