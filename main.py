@@ -1,15 +1,17 @@
 import arrr
-import pyscript
+from pyscript import document
+from pyscript import fetch
+from pyodide.http import pyfetch
 
 
 async def translate_english(event):
-    input_text = pyscript.document.querySelector("#english")
+    input_text = document.querySelector("#english")
     english = input_text.value
-    output_div = pyscript.document.querySelector("#output")
+    output_div = document.querySelector("#output")
     try:
-        response = await pyscript.fetch(
+        response = await pyfetch(
         "https://www.nytimes.com/puzzles/letter-boxed",
-        method="GET").json()
+        method="GET")
     except Exception as e:
         response = e
     print(response)
