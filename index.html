@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <script src="/mini-coi.js" scope="./"></script> 
   <title>Letter Boxed Solver</title>
   <meta name="description" content="Solutions for The New York Times game Letter Boxed.">
   <meta name="author" content="Elaine Han">
@@ -21,15 +20,6 @@
   <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 
-  <!-- for splashscreen -->
-  <style>
-    #loading { outline: none; border: none; background: transparent }
-  </style>
-  <script type="module">
-    const loading = document.getElementById('loading');
-    addEventListener('py:ready', () => loading.close());
-    loading.showModal();
-  </script>
 </head>
 <body>
   <script type="mpy" src="./main.py" config="./pyscript.toml" async terminal></script>
@@ -38,9 +28,6 @@
       response = await pyscript.fetch("https://examples.pyscriptapps.com/api-proxy-and-secrets-tutorial/api/proxies/list-secrets", method="GET").json()
       print(response)
   </py-script>
-  <dialog id="loading">
-    <h1>Loading...</h1>
-  </dialog>
   <section class="pyscript">
     <div class="section" id='titleSection'>
       <h1> Letter Boxed Solver </h1>
