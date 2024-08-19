@@ -1,18 +1,13 @@
-from flask import Flask, render_template, request, jsonify
-from flask_caching import Cache
 import os
+from pyscript import fetch
 
-app = Flask(__name__)
+response = await fetch(
+    "https://examples.pyscriptapps.com/api-proxy-and-secrets-tutorial/api/proxies/list-secrets",
+    method="GET"
+).json()
 
-### CACHING ###
-config = {
-    "CACHE_TYPE": "RedisCache",
-    "CACHE_DEFAULT_TIMEOUT": 86400, # 1 day
-    "CACHE_REDIS_HOST": os.environ.get('REDISHOST', 'localhost'),
-    "CACHE_REDIS_PORT": int(os.environ.get('REDISPORT', 6379))
-}
-app.config.from_mapping(config)
-cache = Cache(app)
+
+print(response)
 
 ### GET NYT METADATA FOR TODAY'S PUZZLE ###
 
