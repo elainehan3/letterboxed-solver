@@ -15,4 +15,4 @@ async def translate_english(event):
     except Exception as e:
         response = e
     print(response)
-    output_div.innerText = arrr.translate(english) + response
+    output_div.innerText = arrr.translate(english)
