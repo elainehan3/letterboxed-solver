@@ -12,6 +12,7 @@ async def translate_english(event):
         "https://www.nytimes.com/puzzles/letter-boxed",
         method="GET")
     except Exception as e:
+        response = e
         print(e)
     print(response)
     output_div.innerText = arrr.translate(english)
