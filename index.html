@@ -1,67 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Letter Boxed Solver</title>
-  <meta name="description" content="Solutions for The New York Times game Letter Boxed.">
-  <meta name="author" content="Elaine Han">
-  <link rel="icon" type="image/png" href="./assets/favicon.png" />
+    <title>API Proxy and Secrets Tutorial</title>
 
-  <!-- Recommended meta tags -->
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <!-- Recommended meta tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-  <!-- PyScript CSS -->
-  <link rel="stylesheet" href="https://pyscript.net/releases/2024.6.1/core.css">
+    <!-- PyScript CSS -->
+    <script type="text/javascript" nonce="5c927823d4904c73822f888faa2" src="//local.adguard.org?ts=1724021110201&amp;type=content-script&amp;dmn=pyscript.com&amp;url=https%3A%2F%2Fpyscript.com%2Fapi%2Fcontent%2F7a51d83e-03e2-48b3-8983-a942837e2a1d%252F960215c8-7704-4b7c-aa8e-66be2e6d3d9e%252Flatest%252Findex.html&amp;app=com.google.Chrome&amp;css=3&amp;js=1&amp;rel=1&amp;rji=1&amp;sbe=1"></script>
+<script type="text/javascript" nonce="5c927823d4904c73822f888faa2" src="//local.adguard.org?ts=1724021110201&amp;name=AdGuard%20Extra&amp;type=user-script"></script><link rel="stylesheet" href="https://pyscript.net/releases/2024.5.2/core.css">
 
-  <!-- This script tag bootstraps PyScript -->
-  <script type="module" src="https://pyscript.net/releases/2024.6.1/core.js"></script>
-  
-  <!-- Custom CSS -->
-  <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
+    <!-- This script tag bootstraps PyScript -->
+    <script type="module" src="https://pyscript.net/releases/2024.5.2/core.js"></script>
 
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <script type="mpy" src="./main.py" config="./pyscript.toml" async terminal></script>
-    <py-script>
-      from pyscript import fetch
-      response = await pyscript.fetch("https://examples.pyscriptapps.com/api-proxy-and-secrets-tutorial/api/proxies/list-secrets", method="GET").json()
-      print(response)
-  </py-script>
-  <section class="pyscript">
-    <div class="section" id='titleSection'>
-      <h1> Letter Boxed Solver </h1>
-      <div class="desc">
-        <a href="https://www.nytimes.com/puzzles/letter-boxed" target="_blank">Letter Boxed</a> is New York Times game where you create words using letters around the square.
-      </div>
-    </div>
-    
-    <div class="section" id='formSection'>
-      <div>
-        <button type='button' id ='autoPopulate' style='width:auto'>Autofill with today's puzzle</button>
-      </div>
-      <form>
-      <div class="section">
-          <div class="section">
-            <input type='text' maxlength='3' id='topInput' placeholder='Top Letters' required>
-            <input type='text' maxlength='3' id='rightInput' placeholder='Right Letters' required>
-            <input type='text' maxlength='3' id='bottomInput' placeholder='Bottom Letters' required>
-            <input type='text' maxlength='3' id='leftInput' placeholder='Left Letters' required> 
-          </div>
-        <div class="entry">
-          Solve in this # of words: 
-          <input type='radio' name='num' value='1'>1 (rare)
-          <input type='radio' name='num' value='2' checked='checked'>2
-          <input type='radio' name='num' value='3'>3
-         </div>
-        <div class="entry">
-          First Word (Optional): <input type='text' id='alreadyWords'>
-        </div>
-        <button type='button' id ='retrieve'><b>Solve</b></button>
-        <div class="section">
-        <div class='error'></div>
-      </form>
-    </div>
-  </section>
+    <script type="py" src="./main.py" config="./pyscript.toml" async terminal></script>
 </body>
 </html>
