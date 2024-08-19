@@ -1,9 +1,9 @@
-from pyscript import fetch
-
-response = await fetch(
-    "https://examples.pyscriptapps.com/api-proxy-and-secrets-tutorial/api/proxies/list-secrets",
-    method="GET"
-).json()
+import arrr
+from pyscript import document
 
 
-print(response)
+def translate_english(event):
+    input_text = document.querySelector("#english")
+    english = input_text.value
+    output_div = document.querySelector("#output")
+    output_div.innerText = arrr.translate(english)
