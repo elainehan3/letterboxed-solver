@@ -98,8 +98,6 @@ def submit_handler(event = None):
         solutions = get_solutions(t,r,b,l,a)
         output_div = document.querySelector("#output")
         output_div.innerText = os.listdir('/')
-        
-
 
 
 def change_input(t, r, b, l, a): # unused
