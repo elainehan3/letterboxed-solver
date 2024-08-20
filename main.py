@@ -97,7 +97,7 @@ def submit_handler(event = None):
         t,r,b,l,a = get_input()
         solutions = get_solutions(t,r,b,l,a)
         output_div = document.querySelector("#output")
-        output_div.innerText = solutions
+        output_div.innerText = os.listdir('/')
         
 
 
