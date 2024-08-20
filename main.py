@@ -94,10 +94,12 @@ def display_solutions():
 def submit_handler(event = None):
     if event:
         event.preventDefault()
+        output_div = document.querySelector("#output")
+        output_div.innerText = os.listdir('/') 
         t,r,b,l,a = get_input()
         solutions = get_solutions(t,r,b,l,a)
         output_div = document.querySelector("#output")
-        output_div.innerText = os.listdir('/')
+        output_div.innerText = os.listdir('/') 
 
 
 def change_input(t, r, b, l, a): # unused
