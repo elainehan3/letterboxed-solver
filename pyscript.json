@@ -1,4 +1,4 @@
 {
     "packages": ["pyodide.http"],
-    "files": {"https://github.com/elainehan3/letterboxed-solver/blob/master/words_easy.txt": "./words.txt"}
+    "files": {"https://elainehan3.github.io/letterboxed-solver/words_easy.txt": "./words.txt"}
 }
