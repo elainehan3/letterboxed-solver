@@ -1,8 +1,7 @@
-import arrr
 from pyscript import document
-from pyodide.http import pyfetch
+import os
 
-
+'''
 async def translate_english(event):
     input_text = document.querySelector("#english")
     english = input_text.value
@@ -15,4 +14,82 @@ async def translate_english(event):
         response = e
         print(e)
     print(response)
-    output_div.innerText = arrr.translate(english)
+    output_div.innerText = english
+'''
+
+
+def get_input() -> (str, str, str, str, str):
+    top = document.querySelector("#top")
+    t = top.value.upper()
+    right = document.querySelector("#right")
+    r = right.value.upper()
+    bottom = document.querySelector("#bottom")
+    b = bottom.value.upper()
+    left = document.querySelector("#left")
+    l = left.value.upper()
+    already = document.querySelector("#alreadyWords")
+    a = already.value.upper()
+    return t,r,b,l,a
+
+def get_words(sides, t: str, r: str, b: str, l: str):
+    with open("./words.txt") as file:
+        allowed = set(t+r+b+l)
+        valid = [word for word in file if set(word) <= allowed]
+        remove = []
+        for word in valid:
+            c_last = word[0]
+            i = 1
+            while i < len(word):
+                if (sides[word[i]] == sides[word[i-1]]):
+                    remove.append(word)
+                    break
+                i += 1
+        return set(valid) - set(remove)
+
+def get_dict(t: str, r: str, b: str, l: str):
+    sides = {}
+    for c in t:
+        sides[c] = "t"
+    for c in r:
+        sides[c] = "r"
+    for c in b:
+        sides[c] = "b"
+    for c in l:
+        sides[c] = "l"
+    return sides
+
+def get_solutions(t: str, r: str, b: str, l: str, already:str):
+    sides = get_dict(t,r,b,l)
+    valid_words = get_words(sides, t, r, b, l)
+    return valid_words
+
+def display_solutions():
+    output_div = document.querySelector("#output")
+    output_div.innerText = english
+
+def submit_handler(event = None):
+    if event:
+        event.preventDefault()
+        t,r,b,l,a = get_input()
+        solutions = get_solutions(t,r,b,l,a)
+        output_div = document.querySelector("#output")
+        output_div.innerText = solutions
+        
+
+
+
+def change_input(t, r, b, l, a): # unused
+    top = document.querySelector("#top")
+    top.value = t
+    right = document.querySelector("#right")
+    right.value = r
+    bottom = document.querySelector("#bottom")
+    bottom.value = b
+    left = document.querySelector("#left")
+    left.value = l
+    already = document.querySelector("#alreadyWords")
+    already.value = a
+def reset_handler(event = None):
+    if event:
+        change_input("","","","","")
+
