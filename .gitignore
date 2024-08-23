@@ -22,3 +22,7 @@ node_modules/
 .parcel-cache
 
 .DS_Store
+
+make_dictcpy.py
+dict.json
+dict1.json
