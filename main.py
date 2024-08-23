@@ -44,21 +44,21 @@ def get_dict(t: str, r: str, b: str, l: str):
     return sides
 
 def get_words(sides, t: str, r: str, b: str, l: str):
-    with open("./words_easy.txt") as file:
-        # allowed = set(t+r+b+l)
-        # valid = [word for word in file if set(word) <= allowed]
-        # remove = []
-        # for word in valid:
-        #     c_last = word[0]
-        #     i = 1
-        #     while i < len(word):
-        #         if (sides[word[i]] == sides[word[i-1]]):
-        #             remove.append(word)
-        #             break
-        #         i += 1
-        # return set(valid) - set(remove)
-        valid = [word for word in file]
-        return set(valid)
+    with open("./words.txt") as file:
+        allowed = set(t+r+b+l)
+        valid = [word for word in file if set(word) <= allowed]
+        remove = []
+        for word in valid:
+            c_last = word[0]
+            i = 1
+            while i < len(word):
+                if (sides[word[i]] == sides[word[i-1]]):
+                    remove.append(word)
+                    break
+                i += 1
+        return set(valid) - set(remove)
+        # valid = [word for word in file]
+        # return set(valid)
 
 def one_word_solution(word_list, chars):
     return [w for w in word_list if set(w) == chars]
