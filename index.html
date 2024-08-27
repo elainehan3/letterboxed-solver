@@ -24,38 +24,45 @@
       <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-      <div class="section" id='titleSection'>
-        <h1> Letter Boxed Solver </h1>
-        <div class="desc">
-          <a href="https://www.nytimes.com/puzzles/letter-boxed" target="_blank">Letter Boxed</a> is New York Times game where you create words using letters around the square.
+    <div class="section" id='titleSection'>
+      <h1> Letter Boxed Solver </h1>
+      <div class="desc">
+        <a href="https://www.nytimes.com/puzzles/letter-boxed" target="_blank">Letter Boxed</a> is New York Times game where you create words using letters around the square.
+      </div>
+    </div>
+    <div class="section" id='formSection'>
+      <form id="form" py-submit="submit_handler" >
+          <div class="inputs">
+              <div class="entry">
+                  Top: <input type='text' maxlength='3' id='top' placeholder='Top Letters'  value="BLI" required>
+              </div>
+              <div class="entry">
+                  Right: <input type='text' maxlength='3' id='right' placeholder='Right Letters' value="TAN" required>
+              </div>
+              <div class="entry">
+                  Bottom: <input type='text' maxlength='3' id='bottom' placeholder='Bottom Letters' value="PSO" required>
+              </div>
+              <div class="entry">
+                  Left: <input type='text' maxlength='3' id='left' placeholder='Left Letters' value="EGR" required> 
+              </div>
+          </div>
+          <div class="entry-wrap">
+              <p>First Word (Optional):</p> <input type='text' id='alreadyWords'>
+          </div>
+          <button type='submit' id ='solve' py-click='submit_handler'>Solve</button>
+      </form>
+    </div>
+    <div class="solutions-wrapper">
+        <div class="solutions">
+            <div id="one_word_head"></div>
+            <div id="one_word_sols"></div>
         </div>
-      </div>
-      <div class="section" id='formSection'>
-        <form id="form" py-submit="submit_handler" >
-            <div class="inputs">
-                <div class="entry">
-                    Top: <input type='text' maxlength='3' id='top' placeholder='Top Letters'  value="XNI" required>
-                </div>
-                <div class="entry">
-                    Right: <input type='text' maxlength='3' id='right' placeholder='Right Letters' value="MAL" required>
-                </div>
-                <div class="entry">
-                    Bottom: <input type='text' maxlength='3' id='bottom' placeholder='Bottom Letters' value="PJY" required>
-                </div>
-                <div class="entry">
-                    Left: <input type='text' maxlength='3' id='left' placeholder='Left Letters' value="EGF" required> 
-                </div>
-            </div>
-            <div class="entry">
-                First Word (Optional): <input type='text' id='alreadyWords'>
-            </div>
-            <button type='submit' id ='solve' py-click='submit_handler'>Solve</button>
-        </form>
-      </div>
-      <div class="section">
-          <div id="output"></div>
-          <div class='error'></div>
-          <script type="py" src="./main.py" config="./pyscript.json" async></script>
-      </div>
-  </body>
+        <div class="solutions">
+            <div id="two_word_head"></div>
+            <div id="two_word_sols"></div>
+        </div>
+        <div class='error'></div>
+        <script type="py" src="./main.py" config="./pyscript.json" async></script>
+    </div>
+</body>
 </html>
