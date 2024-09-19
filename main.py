@@ -62,7 +62,7 @@ def get_words(sides, t: str, r: str, b: str, l: str):
 def one_word_sols(words, allowed):
     output = ["<p>" + word + "</p>" for word in words if set(word) == allowed]
     if len(output) == 0:
-        output = ["NO ONE WORD SOLUTIONS FOUND"]
+        output = ["<p>NO ONE WORD SOLUTIONS FOUND</p>"]
     return "".join(output)
 
 # find two word solutions

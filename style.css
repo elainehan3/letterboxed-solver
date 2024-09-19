@@ -50,9 +50,9 @@ input {
 }
 
 .error {
-  float: left;
-  margin: 5px;
-  padding: 5px;
+  color: red;
+  margin: 0px;
+  padding: 0px;
 }
 
 .loader img {
